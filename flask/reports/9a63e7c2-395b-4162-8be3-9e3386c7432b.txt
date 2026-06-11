@@ -1,0 +1,150 @@
+
+========================================================
+          NEUROINSIGHT AI RADIOLOGY REPORT
+========================================================
+
+
+========================================================
+1. MRI VALIDATION
+========================================================
+
+Result:
+Valid Brain MRI Scan Detected
+
+Validation Confidence:
+99.99%
+
+Observation:
+The uploaded image was successfully identified as a brain
+MRI scan and passed the validation stage for further
+tumor analysis.
+
+========================================================
+2. TUMOR CLASSIFICATION
+========================================================
+
+Prediction:
+Tumor Detected
+
+Tumor Type:
+Meningioma
+
+Model Confidence:
+90.75%
+
+AI Interpretation:
+The deep learning classification model predicts the
+presence of a Meningioma tumor with high confidence.
+
+About Meningioma:
+Meningioma is a detected brain tumor category
+identified using the trained deep learning model.
+
+========================================================
+3. TUMOR SEGMENTATION ANALYSIS
+========================================================
+
+Affected Brain Region:
+0.82%
+
+Tumor Area:
+536 pixels
+
+Severity Level:
+Very Small
+
+Tumor Location:
+Approximate Coordinates:
+X = 78.7
+Y = 85.0
+
+Bounding Box Size:
+[28, 26]
+
+Tumor Shape Characteristics:
+- Eccentricity : 0.614
+- Solidity     : 0.947
+
+Segmentation Observation:
+The segmentation model successfully identified the
+suspected tumor region and highlighted the affected
+area in the MRI scan.
+
+The detected region appears localized with a compact
+boundary structure.
+
+========================================================
+4. GRAD-CAM EXPLAINABILITY ANALYSIS
+========================================================
+
+Explainable AI (Grad-CAM):
+The Grad-CAM heatmap highlights the regions of the MRI
+image that contributed most strongly to the prediction.
+
+Observation:
+The highlighted heat regions correspond closely with
+the segmented tumor area, improving prediction
+interpretability and trustworthiness.
+
+========================================================
+5. RISK ASSESSMENT
+========================================================
+
+Risk Level:
+LOW RISK
+
+Reason:
+The detected tumor occupies approximately
+0.82% of the brain region.
+
+Suggested Medical Action:
+
+- Regular monitoring recommended
+- Consultation with neurologist advised
+- Follow-up MRI scans may be required
+
+
+========================================================
+6. AI GENERATED MEDICAL SUMMARY
+========================================================
+
+Summary:
+The MRI scan indicates the presence of a
+Meningioma tumor with high prediction confidence.
+
+The tumor occupies approximately
+0.82% of the brain region.
+
+No large-scale spread or highly aggressive
+characteristics were observed from the segmentation
+analysis.
+
+========================================================
+7. RECOMMENDATIONS
+========================================================
+
+Recommended Next Steps:
+1. Consult a radiologist or neurologist
+2. Perform clinical evaluation
+3. Compare with previous MRI scans
+4. Monitor tumor progression regularly
+5. Consider advanced imaging if required
+
+========================================================
+8. IMPORTANT DISCLAIMER
+========================================================
+
+This report is generated using Artificial Intelligence
+and deep learning models for educational and research
+purposes only.
+
+The system assists doctors and medical professionals
+by providing automated MRI analysis and should not be
+considered a final clinical diagnosis.
+
+Final diagnosis must always be confirmed by qualified
+medical experts.
+
+========================================================
+        END OF AI GENERATED REPORT
+========================================================

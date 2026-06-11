@@ -1,0 +1,218 @@
+
+========================================================
+          NEUROINSIGHT AI RADIOLOGY REPORT
+========================================================
+
+Scan ID   : MRI-2026-22826
+Date/Time : 26 May 2026 | 02:02 PM
+========================================================
+
+
+========================================================
+1. MRI VALIDATION
+========================================================
+
+Result:
+Valid Brain MRI Scan Detected
+
+Validation Confidence:
+99.99%
+
+Observation:
+The uploaded image was successfully identified as a
+brain MRI scan and passed all validation checks for
+further tumor analysis.
+
+
+========================================================
+2. TUMOR CLASSIFICATION
+========================================================
+
+Detection Result:
+Tumor Detected
+
+Tumor Type:
+Meningioma
+
+Model Confidence:
+90.75%
+
+Classification Model:
+Deep Learning CNN (EfficientNet-based)
+
+AI Interpretation:
+The deep learning model predicts the presence of a Meningioma with high confidence.
+
+
+========================================================
+3. TUMOR SEGMENTATION ANALYSIS
+========================================================
+
+Affected Brain Region:
+0.82%
+
+Tumor Area:
+536 pixels
+
+Severity Level:
+Very Small
+
+Tumor Location:
+X = 78.7, Y = 85.0
+
+Bounding Box Size:
+[28, 26]
+
+------------------------------------------------------
+SHAPE CHARACTERISTICS
+------------------------------------------------------
+
+1. ECCENTRICITY  =  0.614
+   Scale: 0.0 (perfect circle) -> 1.0 (elongated line)
+
+   Shape Description:
+   Moderately elongated
+
+   Interpretation:
+   Elevated eccentricity - possible infiltrative growth pattern
+
+   Clinical Significance:
+   Noticeably irregular, non-circular form. May suggest infiltrative characteristics or pressure-induced deformation. Associated with higher-grade pathology in some tumor types.
+
+2. SOLIDITY  =  0.947
+   Scale: 0.0 (highly irregular) -> 1.0 (perfect solid shape)
+
+   Shape Description:
+   Compact and convex
+
+   Interpretation:
+   High solidity - well-defined, likely benign margin
+
+   Clinical Significance:
+   Highly solid, well-defined boundary with no significant concavities. Strongly associated with benign, encapsulated lesions. Tumor has a clear, predictable margin - favorable for surgical planning.
+
+Combined Shape Risk Flag:
+LOW SHAPE RISK - Compact, regular boundaries consistent with benign morphology.
+
+------------------------------------------------------
+Segmentation Observation:
+The segmentation model identified the suspected tumor
+region and highlighted the affected area in the MRI.
+
+The detected region appears compact and convex
+with compact boundary characteristics.
+
+
+========================================================
+4. TUMOR TYPE - CLINICAL PROFILE
+========================================================
+
+Tumor Type:
+Meningioma
+
+Description:
+Meningioma arises from the meninges - the protective membranes surrounding the brain and spinal cord. It is typically slow-growing, extra-axial, and often benign, representing the most common primary brain tumor (~36%). Most meningiomas are incidental findings on imaging.
+
+Key Characteristics:
+  - Slow-growing
+  - Extra-axial (outside brain tissue)
+  - Well-defined margins
+  - Dural tail sign on MRI
+  - Often asymptomatic when small
+
+Origin / Cell Type:
+Arachnoid cap cells of the meninges
+
+Prevalence:
+~36% of all primary brain tumors
+
+Typical Brain Location:
+Convexity, falx cerebri, sphenoid wing, posterior fossa
+
+Growth Rate:
+Slow (average 1-2 mm/year)
+
+Malignancy Profile:
+Usually benign - WHO Grade I (occasionally II or III)
+
+Common Symptoms:
+Headache, seizures, focal neurological deficits (if large)
+
+Treatment Options:
+Observation / Microsurgery / Stereotactic radiosurgery
+
+Prognosis:
+Generally favorable; recurrence possible after resection
+
+========================================================
+5. GRAD-CAM EXPLAINABILITY ANALYSIS
+========================================================
+
+Explainable AI (Grad-CAM):
+The Grad-CAM heatmap highlights the regions of the MRI
+image that contributed most strongly to the prediction.
+
+Observation:
+The highlighted heat regions correspond closely with the segmented tumor area, improving prediction interpretability and trustworthiness. The activation map confirms the model focused on the correct anatomical region.
+
+
+========================================================
+6. RISK ASSESSMENT
+========================================================
+
+Risk Level:
+LOW RISK
+
+Reason:
+The detected tumor occupies ~0.82% of the brain region (Very Small classification).
+
+Shape-Based Morphology Risk:
+LOW SHAPE RISK - Compact, regular boundaries consistent with benign morphology.
+
+Suggested Medical Action:
+Regular monitoring recommended. Neurologist consultation advised. Follow-up MRI in 6-12 months.
+
+
+========================================================
+7. AI GENERATED MEDICAL SUMMARY
+========================================================
+
+The MRI indicates a Very Small Meningioma occupying ~0.82% of the brain region. The lesion appears localized and well-defined with no evidence of aggressive infiltration. Low-risk profile warrants regular monitoring rather than immediate surgical intervention.
+
+
+========================================================
+8. RECOMMENDATIONS
+========================================================
+
+Recommended Next Steps:
+   1. Consult a neurologist or neurosurgeon for formal evaluation
+   2. Periodic MRI surveillance every 6-12 months
+   3. No immediate surgical intervention for very small (<3 cm) tumors
+   4. Monitor for neurological symptom onset or progression
+   5. Consider stereotactic radiosurgery (SRS) if growth is detected
+
+
+========================================================
+9. IMPORTANT DISCLAIMER
+========================================================
+
+This report is generated using Artificial Intelligence
+and deep learning models for educational and research
+purposes only.
+
+The system assists medical professionals by providing
+automated MRI analysis and should NOT be considered a
+final clinical diagnosis.
+
+Final diagnosis must always be confirmed by qualified
+medical experts including radiologists, neurologists,
+and neurosurgeons.
+
+Eccentricity and Solidity values are shape descriptors
+derived from image segmentation. They are supportive
+indicators only and do not replace histopathological
+confirmation.
+
+========================================================
+        END OF AI GENERATED REPORT
+========================================================

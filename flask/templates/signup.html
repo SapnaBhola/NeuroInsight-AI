@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sign Up - NeuroInsight AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:
+    linear-gradient(rgba(15,23,42,0.9),rgba(15,23,42,0.9)),
+    url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1470&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+}
+
+.signup-container{
+    width:100%;
+    max-width:520px;
+    background:white;
+    padding:45px;
+    border-radius:28px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.25);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h1{
+    font-size:34px;
+    color:#0f172a;
+}
+
+.logo span{
+    color:#2563eb;
+}
+
+.logo p{
+    margin-top:10px;
+    color:#64748b;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#334155;
+}
+
+.form-group input{
+    width:100%;
+    padding:15px;
+    border:1px solid #cbd5e1;
+    border-radius:14px;
+    font-size:15px;
+    outline:none;
+    transition:0.3s;
+}
+
+.form-group input:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.15);
+}
+
+.signup-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:10px;
+}
+
+.signup-btn:hover{
+    background:#1d4ed8;
+}
+
+.bottom-text{
+    text-align:center;
+    margin-top:25px;
+    color:#64748b;
+}
+
+.bottom-text a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.error{
+    background:#fee2e2;
+    color:#dc2626;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.success{
+    background:#dcfce7;
+    color:#16a34a;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+/* PASSWORD */
+
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    width:100%;
+    padding-right:55px;
+}
+
+.toggle-password{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:18px;
+}
+
+.password-rules{
+    margin-top:12px;
+    background:#f8fafc;
+    padding:14px;
+    border-radius:12px;
+}
+
+.password-rules p{
+    font-size:14px;
+    margin:6px 0;
+}
+
+.valid{
+    color:#16a34a;
+}
+
+.invalid{
+    color:#dc2626;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="signup-container">
+
+    <div class="logo">
+
+        <h1>Neuro<span>Insight</span></h1>
+
+        <p>Create Doctor Account</p>
+
+    </div>
+
+    {% if error %}
+    <div class="error">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    {% if success %}
+    <div class="success">
+        {{ success }}
+    </div>
+    {% endif %}
+
+    <form method="POST">
+
+        <div class="form-group">
+
+            <label>Doctor Full Name</label>
+
+            <input
+                type="text"
+                name="doctor_name"
+                placeholder="Enter doctor name"
+                required
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter email address"
+                required
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+                type="text"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+            >
+
+        </div>
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <label>Password</label>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create strong password"
+                    required
+                >
+
+                <span
+                    class="toggle-password"
+                    onclick="togglePassword()"
+                >
+                    👁
+                </span>
+
+            </div>
+
+            <!-- RULES -->
+
+            <div class="password-rules">
+
+                <p id="length" class="invalid">
+                    ❌ Minimum 8 characters
+                </p>
+
+                <p id="uppercase" class="invalid">
+                    ❌ One uppercase letter
+                </p>
+
+                <p id="lowercase" class="invalid">
+                    ❌ One lowercase letter
+                </p>
+
+                <p id="number" class="invalid">
+                    ❌ One number
+                </p>
+
+                <p id="special" class="invalid">
+                    ❌ One special character
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- CONFIRM PASSWORD -->
+
+        <div class="form-group">
+
+            <label>Confirm Password</label>
+
+            <input
+                type="password"
+                name="confirm_password"
+                placeholder="Confirm password"
+                required
+            >
+
+        </div>
+
+        <button type="submit" class="signup-btn">
+            Create Account
+        </button>
+
+    </form>
+
+    <div class="bottom-text">
+
+        Already have an account?
+
+        <a href="/login">
+            Login
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+const passwordInput =
+document.getElementById("password");
+
+passwordInput.addEventListener(
+    "keyup",
+    function(){
+
+        const password =
+        passwordInput.value;
+
+        // LENGTH
+
+        if(password.length >= 8){
+
+            document
+            .getElementById("length")
+            .classList
+            .replace("invalid","valid");
+
+            document
+            .getElementById("length")
+            .innerHTML =
+            "✅ Minimum 8 characters";
+
+        }else{
+
+            document
+            .getElementById("length")
+            .classList
+            .replace("valid","invalid");
+
+            document
+            .getElementById("length")
+            .innerHTML =
+            "❌ Minimum 8 characters";
+        }
+
+        // UPPERCASE
+
+        if(/[A-Z]/.test(password)){
+
+            document
+            .getElementById("uppercase")
+            .classList
+            .replace("invalid","valid");
+
+            document
+            .getElementById("uppercase")
+            .innerHTML =
+            "✅ One uppercase letter";
+
+        }else{
+
+            document
+            .getElementById("uppercase")
+            .classList
+            .replace("valid","invalid");
+
+            document
+            .getElementById("uppercase")
+            .innerHTML =
+            "❌ One uppercase letter";
+        }
+
+        // LOWERCASE
+
+        if(/[a-z]/.test(password)){
+
+            document
+            .getElementById("lowercase")
+            .classList
+            .replace("invalid","valid");
+
+            document
+            .getElementById("lowercase")
+            .innerHTML =
+            "✅ One lowercase letter";
+
+        }else{
+
+            document
+            .getElementById("lowercase")
+            .classList
+            .replace("valid","invalid");
+
+            document
+            .getElementById("lowercase")
+            .innerHTML =
+            "❌ One lowercase letter";
+        }
+
+        // NUMBER
+
+        if(/[0-9]/.test(password)){
+
+            document
+            .getElementById("number")
+            .classList
+            .replace("invalid","valid");
+
+            document
+            .getElementById("number")
+            .innerHTML =
+            "✅ One number";
+
+        }else{
+
+            document
+            .getElementById("number")
+            .classList
+            .replace("valid","invalid");
+
+            document
+            .getElementById("number")
+            .innerHTML =
+            "❌ One number";
+        }
+
+        // SPECIAL CHARACTER
+
+        if(/[!@#$%^&*]/.test(password)){
+
+            document
+            .getElementById("special")
+            .classList
+            .replace("invalid","valid");
+
+            document
+            .getElementById("special")
+            .innerHTML =
+            "✅ One special character";
+
+        }else{
+
+            document
+            .getElementById("special")
+            .classList
+            .replace("valid","invalid");
+
+            document
+            .getElementById("special")
+            .innerHTML =
+            "❌ One special character";
+        }
+
+    }
+);
+
+function togglePassword(){
+
+    const password =
+    document.getElementById("password");
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+    }else{
+
+        password.type = "password";
+    }
+}
+
+</script>
+
+</body>
+</html>

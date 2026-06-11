@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NeuroInsight AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+    color:#0f172a;
+    overflow-x:hidden;
+}
+
+/* =====================================================
+NAVBAR
+===================================================== */
+
+.navbar{
+    width:100%;
+    background:#0f172a;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#3b82f6;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#60a5fa;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.login-btn,
+.signup-btn,
+.logout-btn{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:12px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.login-btn{
+    background:transparent;
+    border:1px solid #3b82f6;
+    color:white;
+}
+
+.login-btn:hover{
+    background:#2563eb;
+}
+
+.signup-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.signup-btn:hover{
+    background:#1d4ed8;
+}
+
+.logout-btn{
+    background:#ef4444;
+    color:white;
+}
+
+.logout-btn:hover{
+    background:#dc2626;
+}
+
+/* =====================================================
+HERO SECTION
+===================================================== */
+
+.hero{
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 6%;
+    background:linear-gradient(to right,#0f172a,#1e293b);
+    color:white;
+    gap:40px;
+}
+
+.hero-left{
+    flex:1;
+}
+
+.hero-left h1{
+    font-size:64px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero-left span{
+    color:#60a5fa;
+}
+
+.hero-left p{
+    font-size:18px;
+    line-height:1.8;
+    color:#cbd5e1;
+    margin-bottom:35px;
+    max-width:700px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-btn,
+.secondary-btn{
+    padding:16px 28px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.hero-btn:hover{
+    background:#1d4ed8;
+}
+
+.secondary-btn{
+    background:white;
+    color:#0f172a;
+}
+
+.secondary-btn:hover{
+    background:#e2e8f0;
+}
+
+/* =====================================================
+STATS
+===================================================== */
+
+.stats{
+    padding:80px 6%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.stat-card{
+    background:white;
+    padding:35px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+}
+
+.stat-card h2{
+    color:#2563eb;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#475569;
+}
+
+/* =====================================================
+FEATURES
+===================================================== */
+
+.features{
+    padding:40px 6% 90px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:44px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.feature-card{
+    background:white;
+    padding:35px;
+    border-radius:24px;
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+}
+
+.feature-card h3{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.feature-card p{
+    color:#475569;
+    line-height:1.8;
+}
+
+/* =====================================================
+MRI GALLERY
+===================================================== */
+
+.gallery{
+    padding:20px 6% 90px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* =====================================================
+CTA
+===================================================== */
+
+.cta{
+    margin:0 6% 100px;
+    background:linear-gradient(to right,#2563eb,#1d4ed8);
+    color:white;
+    padding:70px;
+    border-radius:30px;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:46px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    margin-bottom:35px;
+    color:#dbeafe;
+}
+
+.cta a{
+    background:white;
+    color:#1d4ed8;
+    text-decoration:none;
+    padding:16px 30px;
+    border-radius:14px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.cta a:hover{
+    background:#e2e8f0;
+}
+
+/* =====================================================
+FOOTER
+===================================================== */
+
+.footer{
+    background:#0f172a;
+    color:white;
+    padding:70px 6% 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.footer h3{
+    margin-bottom:20px;
+    color:#60a5fa;
+}
+
+.footer p,
+.footer li{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.footer ul{
+    list-style:none;
+}
+
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid #334155;
+    padding-top:20px;
+    color:#94a3b8;
+}
+
+/* =====================================================
+POPUP MODAL
+===================================================== */
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.popup-box{
+    background:white;
+    width:90%;
+    max-width:430px;
+    padding:40px;
+    border-radius:24px;
+    text-align:center;
+    animation:popupAnim 0.3s ease;
+}
+
+@keyframes popupAnim{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.popup-box h2{
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.popup-box p{
+    color:#64748b;
+    margin-bottom:30px;
+    line-height:1.7;
+}
+
+.popup-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.popup-buttons a{
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.popup-login{
+    background:#2563eb;
+    color:white;
+}
+
+.popup-login:hover{
+    background:#1d4ed8;
+}
+
+.popup-signup{
+    background:#0f172a;
+    color:white;
+}
+
+.popup-signup:hover{
+    background:#1e293b;
+}
+
+.close-popup{
+    margin-top:25px;
+    cursor:pointer;
+    color:#ef4444;
+    font-weight:600;
+}
+
+/* =====================================================
+RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-left h1{
+    font-size:50px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.nav-links{
+    display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-left h1{
+    font-size:38px;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
+.cta h2{
+    font-size:34px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+NAVBAR
+===================================================== -->
+
+<div class="navbar">
+
+    <div class="logo">
+        <span>NeuroInsight AI</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#" onclick="handleDetection(event)">
+            Detection
+        </a>
+
+        <a href="/about">
+            About
+        </a>
+
+        <a href="/history">
+            History
+        </a>
+
+        <a href="/contact">
+            Contact
+        </a>
+
+    </div>
+
+    <div class="nav-buttons">
+
+        {% if session.get('user') %}
+
+            <a href="/detect" class="signup-btn">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="logout-btn">
+                Logout
+            </a>
+
+        {% else %}
+
+            <a href="/login" class="login-btn">
+                Login
+            </a>
+
+            <a href="/signup" class="signup-btn">
+                Sign Up
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <h1>
+            AI Powered <span>Brain Tumor</span><br>
+            Detection System
+        </h1>
+
+        <p>
+            NeuroInsight AI helps detect and classify brain tumors
+            using advanced deep learning, MRI segmentation,
+            explainable AI, and intelligent medical analysis.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" onclick="handleDetection(event)" class="hero-btn">
+                Start Detection
+            </a>
+
+            <a href="/about" class="secondary-btn">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+STATS
+===================================================== -->
+
+<section class="stats">
+
+
+    <div class="stat-card">
+        <h2>95%</h2>
+        <p>Tumor Classification</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>0.77</h2>
+        <p>Dice Score</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>24/7</h2>
+        <p>AI Assistance</p>
+    </div>
+
+</section>
+
+<!-- =====================================================
+FEATURES
+===================================================== -->
+
+<section class="features">
+
+    <div class="section-title">
+
+        <h2>Advanced AI Features</h2>
+
+        <p>
+            Medical imaging powered by deep learning
+        </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>🧠 MRI Validation</h3>
+            <p>
+                Checks whether uploaded images are valid brain MRI scans.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔬 Tumor Classification</h3>
+            <p>
+                Detects Glioma, Meningioma, Pituitary and No Tumor.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📍 Tumor Segmentation</h3>
+            <p>
+                Highlights tumor regions using segmentation masks.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔥 Explainable AI</h3>
+            <p>
+                Grad-CAM heatmaps and explainable prediction maps.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+MRI GALLERY
+===================================================== -->
+
+<section class="gallery">
+
+    <div class="section-title">
+
+        <h2>Brain MRI Analysis</h2>
+
+        <p>
+            Medical imaging visualization
+        </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+        <img src="{{ url_for('static', filename='tumor_image.png') }}">
+
+        <img src="{{ url_for('static', filename='grad_cam_image.png') }}">
+
+        <img src="{{ url_for('static', filename='segment_image.png') }}">
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+CTA
+===================================================== -->
+
+<section class="cta">
+
+    <h2>Start AI Detection</h2>
+
+    <p>
+        Upload MRI scans and get intelligent analysis instantly.
+    </p>
+
+
+
+</section>
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>NeuroInsight AI</h3>
+
+            <p>
+                AI-powered brain tumor detection system using
+                deep learning and medical imaging.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li>Detection</li>
+                <li>About</li>
+                <li>History</li>
+                <li>Contact</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Technologies</h3>
+
+            <ul>
+                <li>TensorFlow</li>
+                <li>Flask</li>
+                <li>OpenCV</li>
+                <li>ResNet50</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>neuroinsightai@gmail.com</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 NeuroInsight AI — All Rights Reserved
+    </div>
+
+</footer>
+
+<!-- =====================================================
+LOGIN REQUIRED POPUP
+===================================================== -->
+
+<div class="popup" id="authPopup">
+
+    <div class="popup-box">
+
+        <h2>
+            Login Required
+        </h2>
+
+        <p>
+            Please login or create an account first
+            to access the AI Brain Tumor Detection System.
+        </p>
+
+        <div class="popup-buttons">
+
+            <a href="/login" class="popup-login">
+                Login
+            </a>
+
+            <a href="/signup" class="popup-signup">
+                Sign Up
+            </a>
+
+        </div>
+
+        <div class="close-popup" onclick="closePopup()">
+            Close
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+SCRIPT
+===================================================== -->
+
+<script>
+
+function handleDetection(event){
+
+    event.preventDefault();
+
+    const isLoggedIn = "{{ 'true' if session.get('user') else 'false' }}";
+
+    if(isLoggedIn === "true"){
+
+        window.location.href = "/detect";
+
+    }else{
+
+        document.getElementById("authPopup").style.display = "flex";
+
+    }
+}
+
+function closePopup(){
+
+    document.getElementById("authPopup").style.display = "none";
+
+}
+
+window.onclick = function(event){
+
+    const popup = document.getElementById("authPopup");
+
+    if(event.target == popup){
+
+        popup.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
