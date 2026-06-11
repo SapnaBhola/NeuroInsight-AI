@@ -421,5 +421,4 @@ Final Year Project
 
 # License
 
-This project is intended for educational, academic, and research purposes.#   N e u r o I n s i g h t - A I  
- 
+This project is intended for educational, academic, and research purposes.#
