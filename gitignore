@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+oenv313/
+
+# Models
+*.h5
+*.pth
+*.pt
+*.onnx
+*.pkl
+
+# Datasets
+dataset/
+datasets/
+data/
+
+# Uploads
+uploads/
+
+# Flask
+instance/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
